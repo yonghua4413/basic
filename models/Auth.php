@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\core\MyModel;
 use Yii;
 
 /**
@@ -14,7 +15,7 @@ use Yii;
  * @property int $is_del 是否删除
  * @property int $sort 排序
  */
-class Auth extends \yii\db\ActiveRecord
+class Auth extends MyModel
 {
     /**
      * {@inheritdoc}
