@@ -2,7 +2,6 @@
 namespace app\core;
 
 use Yii;
-use yii\helpers\HtmlPurifier;
 use yii\web\Controller;
 
 class MyController extends Controller
@@ -15,7 +14,7 @@ class MyController extends Controller
     public function beforeAction($action){
         
         $this->session = Yii::$app->session;
-        $this->input = HtmlPurifier::process(Yii::$app->request);
+        $this->input= Yii::$app->request;
         //判断登录
         $this->checkLogin();
         //权限判断
