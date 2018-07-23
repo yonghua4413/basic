@@ -13,5 +13,14 @@ use yii\db\ActiveRecord;
 
 class MyModel extends ActiveRecord
 {
+    private $_table = NULL;
+    public function __construct($table = "")
+    {
+        parent::__construct();
+        $this->_table = $table;
+    }
 
+    public function create($data){
+
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\core\MyModel;
 use Yii;
 
 /**
@@ -22,7 +23,7 @@ use Yii;
  * @property int $is_del 是否删除
  * @property int $is_limit 是否限制登录
  */
-class Admin extends \yii\db\ActiveRecord
+class Admin extends MyModel
 {
     /**
      * {@inheritdoc}
