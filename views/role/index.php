@@ -70,7 +70,7 @@
             var id = $(this).attr('data-id');
             layer.open({
                 type: 2,
-                title: '添加子权限',
+                title: '添加角色',
                 shadeClose: true,
                 shade: 0.8,
                 area: ['50%', '70%'],

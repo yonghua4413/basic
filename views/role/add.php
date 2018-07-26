@@ -10,7 +10,7 @@
 
     <title>综合管理后台</title>
 
-    <?php echo $this->render('common/css');?>
+    <?php echo $this->render('/common/css');?>
     
 	<!-- Mainly scripts -->
     <script src="/assets/js/jquery-3.1.1.min.js"></script>
