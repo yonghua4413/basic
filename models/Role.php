@@ -33,7 +33,6 @@ class Role extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['auth_ids'], 'required'],
             [['auth_ids'], 'string'],
             [['create_time', 'update_time'], 'safe'],
             [['create_id', 'update_id', 'is_del', 'sort'], 'integer'],
@@ -104,12 +103,12 @@ class Role extends \yii\db\ActiveRecord
         $role = new self();
         $fields = $role->attributeLabels();
         foreach ($fields as $k => $v){
-            if(isset($data[$k]) && $data[$k]){
+            if(isset($data[$k])){
                 $role -> $k = $data[$k];
             }
         }
         $res = $role->save();
-        if(!$res) return $role->errors;
+        if(!$res) return false;
         return true;
     }
 }
