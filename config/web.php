@@ -16,7 +16,7 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'hhlXMORn2tixaYeAxnK_toP8garpHT_c',
             'csrfCookie' => [
-                'domain' => 'admin.phpxueyuan.cn',
+                'domain' => 'phpxueyuan.cn',
             ]
         ],
         'cache' => [
