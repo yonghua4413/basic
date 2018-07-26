@@ -83,6 +83,6 @@ class RoleController extends MyController
         ];
         $res = Role::add($add);
         if(!$res) $this->return_json(['code' => 0, 'msg' => json_encode($res)]);
-        $this->return_json(['code' => 0, 'msg' => "操作成功"]);
+        $this->return_json(['code' => 1, 'msg' => "操作成功"]);
     }
 }
