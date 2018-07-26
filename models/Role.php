@@ -94,4 +94,22 @@ class Role extends \yii\db\ActiveRecord
         if(!$res) return $count;
         return $res[0]['num'];
     }
+
+    /**
+     * 添加记录
+     * @param array $data
+     * @return bool
+     */
+    public static function add($data = []){
+        $auth = new self();
+        $fields = $auth->attributeLabels();
+        foreach ($fields as $k => $v){
+            if(isset($data[$k]) && $data[$k]){
+                $auth -> $k = $data[$k];
+            }
+        }
+        $res = $auth->save();
+        if(!$res) return false;
+        return true;
+    }
 }

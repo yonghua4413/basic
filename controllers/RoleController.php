@@ -67,4 +67,23 @@ class RoleController extends MyController
         $data = $this->data;
         return $this->renderPartial('add', $data);
     }
+
+    public function actionDoadd(){
+        $data = $this->data;
+        $roleName = trim($this->input->get('role_name'));
+        if(empty($roleName)) $this->return_json(['code' => 0, "msg" => "角色名不能为空"]);
+        $sort = (int) $this->input->get('sort');
+        $add = [
+            'role_name' => $roleName,
+            'sort' => $sort,
+            'create_id' => $data['userInfo']['id'],
+            'update_id' => $data['userInfo']['id'],
+            'create_time' => date('Y-m-d H:i:s'),
+            'create_time' => date('Y-m-d H:i:s'),
+            'auth_ids' => ''
+        ];
+        $res = Role::add($add);
+        if(!$res) $this->return_json(['code' => 0, 'msg' => "添加失败"]);
+        $this->return_json(['code' => 0, 'msg' => "操作成功"]);
+    }
 }

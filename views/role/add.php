@@ -26,8 +26,8 @@
         <div class="ibox float-e-margins">
             <div class="ibox-content">
                     <?php $form=ActiveForm::begin([
-                        'action'=>['auth/addsonauth'],
-                        'method'=>'post',
+                        'action'=>['role/doadd'],
+                        'method'=>'get',
                         'options'=>['name'=>'form', 'class' => "form-horizontal"]
                     ])?>
 
