@@ -82,7 +82,7 @@ class RoleController extends MyController
             'update_time' => date('Y-m-d H:i:s')
         ];
         $res = Role::add($add);
-        if(!$res) $this->return_json(['code' => 0, 'msg' => "添加失败"]);
+        if(!$res) $this->return_json(['code' => 0, 'msg' => json_encode($res)]);
         $this->return_json(['code' => 0, 'msg' => "操作成功"]);
     }
 }

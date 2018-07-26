@@ -101,15 +101,15 @@ class Role extends \yii\db\ActiveRecord
      * @return bool
      */
     public static function add($data = []){
-        $auth = new self();
-        $fields = $auth->attributeLabels();
+        $role = new self();
+        $fields = $role->attributeLabels();
         foreach ($fields as $k => $v){
             if(isset($data[$k]) && $data[$k]){
-                $auth -> $k = $data[$k];
+                $role -> $k = $data[$k];
             }
         }
-        $res = $auth->save();
-        if(!$res) return false;
+        $res = $role->save();
+        if(!$res) return $role->errors;
         return true;
     }
 }
