@@ -28,7 +28,7 @@ class RoleController extends MyController
         $size = 15;
         $page = (int) $this->input->get('page');
         if(!$page) $page = 1;
-        $order_by = ['sort' => SORT_ASC,'create_time' => SORT_DESC];
+        $order_by = ['sort' => SORT_ASC,'create_time' => SORT_ASC];
         $list = Role::getList($where, $order_by, ($page-1)*$size, $size);
         $data['count'] = $count =  Role::count($where);
         $data['pagination'] = $pagination = new Pagination([
