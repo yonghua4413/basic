@@ -66,7 +66,7 @@
 <script>
 
     $(function(){
-        $('.glyphicon-plus').on("click", function(){
+        $('.add').on("click", function(){
             var id = $(this).attr('data-id');
             layer.open({
                 type: 2,
