@@ -67,7 +67,7 @@
             layer.alert('角色不能为空');
             return;
         }
-		$.post("<?php echo Url::to(['role/doadd']);?>", $("form").serialize(), function(data){
+		$.get("<?php echo Url::to(['role/doadd']);?>", $("form").serialize(), function(data){
 	    	if(data.code == 1){
 		    	layer.msg("添加成功", {'time':1000},  function(){
 		    		window.parent.location.reload(); //刷新父页面
