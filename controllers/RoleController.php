@@ -79,8 +79,7 @@ class RoleController extends MyController
             'create_id' => $data['userInfo']['id'],
             'update_id' => $data['userInfo']['id'],
             'create_time' => date('Y-m-d H:i:s'),
-            'create_time' => date('Y-m-d H:i:s'),
-            'auth_ids' => ''
+            'update_time' => date('Y-m-d H:i:s')
         ];
         $res = Role::add($add);
         if(!$res) $this->return_json(['code' => 0, 'msg' => "添加失败"]);
