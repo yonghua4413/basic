@@ -65,6 +65,6 @@ class RoleController extends MyController
 
     public function actionAdd(){
         $data = $this->data;
-        return $this->render('add', $data);
+        return $this->renderPartial('add', $data);
     }
 }
