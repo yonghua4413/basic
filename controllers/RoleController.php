@@ -62,4 +62,9 @@ class RoleController extends MyController
         
         return $this->render('index', $data);
     }
+
+    public function actionAdd(){
+        $data = $this->data;
+        return $this->render('add', $data);
+    }
 }

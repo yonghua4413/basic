@@ -63,3 +63,19 @@
         </nav>
  	</div>
 </div>
+<script>
+
+    $(function(){
+        $('.glyphicon-plus').on("click", function(){
+            var id = $(this).attr('data-id');
+            layer.open({
+                type: 2,
+                title: '添加子权限',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['50%', '70%'],
+                content: "<?php echo Url::to(['role/add'])?>?id="+id
+            });
+        });
+    });
+</script>
