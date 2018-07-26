@@ -9,18 +9,8 @@
 
     <title>综合管理后台</title>
 
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    <link href="/assets/css/animate.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
-    
-	<!-- Mainly scripts -->
-    <script src="/assets/js/jquery-3.1.1.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="/assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="/assets/layer/layer.js"></script>
+    <?php echo $this->render("/common/css");?>
+    <?php echo $this->render("/common/js");?>
 </head>
 
 <body>
