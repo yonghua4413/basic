@@ -88,7 +88,7 @@
                         return;
                     }
                     layer.msg(data.msg, function () {
-                        $("#tr"+id).remove();
+                        $("#tr_"+id).remove();
                     });
                 })
             });
