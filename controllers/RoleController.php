@@ -69,6 +69,13 @@ class RoleController extends MyController
         return $this->renderPartial('add', $data);
     }
 
+    public function actionEdit(){
+        $data = $this->data;
+        $id = $this->input->get('id');
+        $data['info'] = Role::getOne(['id' => $id]);
+        return $this->renderPartial('edit', $data);
+    }
+
     public function actionDel(){
         $data = $this->data;
         $id = $this->input->get('id');

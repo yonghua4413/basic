@@ -80,6 +80,18 @@
                 content: "<?php echo Url::to(['role/add'])?>?id="+id
             });
         });
+        //edit
+        $('.edit').on("click", function(){
+            var id = $(this).attr('data-id');
+            layer.open({
+                type: 2,
+                title: '编辑角色',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['50%', '70%'],
+                content: "<?php echo Url::to(['role/edit'])?>?id="+id
+            });
+        });
 
         $('.btn-del').on('click', function () {
             var id = $(this).attr('data-id');

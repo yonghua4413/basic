@@ -66,6 +66,12 @@ class Role extends \yii\db\ActiveRecord
     {
         return new TRoleQuery(get_called_class());
     }
+
+    public static function getOne($where = []){
+        $res = self::find()->where($where)->select('id, role_name, sort')->asArray->one();
+        if(!$res) return null;
+        return$res;
+    }
     
     /**
      * 查询日志列表
