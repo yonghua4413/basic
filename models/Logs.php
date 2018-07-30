@@ -71,7 +71,7 @@ class Logs extends \yii\db\ActiveRecord
      * @param string $type
      * @param string $content
      */
-    public function write_log($user_id = 0, $type = "0", $content = "", $sql =""){
+    public static function write_log($user_id = 0, $type = "0", $content = "", $sql =""){
         $log = new Logs();
         $log -> user_id = $user_id;
         $log -> type = $type;

@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 
+use app\models\Logs;
 use Yii;
 use app\core\MyController;
 use app\models\Role;
@@ -73,7 +74,11 @@ class RoleController extends MyController
         $id = $this->input->get('id');
         if($id == 1) $this->return_json(['code' => 0, 'msg' => '不能删除管理员组']);
         $res = Role::del(['id' => $id]);
-        if(!$res) $this->return_json(['code' => 0, 'msg' => '删除失败']);
+        if(!$res) {
+            Logs::write_log($data['userInfo']['id'], 2, '未能删除角色id:'.$id);
+            $this->return_json(['code' => 0, 'msg' => '删除失败']);
+        }
+        Logs::write_log($data['userInfo']['id'], 2, '删除角色id:'.$id);
         $this->return_json(['code' => 1, 'msg' => "操作成功"]);
     }
 
