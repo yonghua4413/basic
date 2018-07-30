@@ -111,4 +111,16 @@ class Role extends \yii\db\ActiveRecord
         if(!$res) return false;
         return true;
     }
+
+    /**
+     * 删除
+     * @param array $where
+     * @return bool
+     */
+    public static function del($where = []){
+        $role = new self();
+        $res = $role->findOne($where)->delete();
+        if(!$res) return false;
+        return true;
+    }
 }

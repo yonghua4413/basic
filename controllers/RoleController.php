@@ -68,6 +68,15 @@ class RoleController extends MyController
         return $this->renderPartial('add', $data);
     }
 
+    public function actionDel(){
+        $data = $this->data;
+        $id = $this->input->get('id');
+        if($id == 1) $this->return_json(['code' => 0, 'msg' => '不能删除管理员组']);
+        $res = Role::del(['id' => $id]);
+        if(!$res) $this->return_json(['code' => 0, 'msg' => '删除失败']);
+        $this->return_json(['code' => 1, 'msg' => "操作成功"]);
+    }
+
     public function actionDoadd(){
         $data = $this->data;
         $roleName = trim($this->input->get('role_name'));

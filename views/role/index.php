@@ -24,7 +24,7 @@
         	<tbody>
         		<?php if($list):?>
         		<?php foreach ($list as $k => $v):?>
-        		<tr>
+        		<tr id="tr_<?php echo $v['id']?>">
         			<td><?php echo $v['id']?></td>
         			<td><?php echo $v['role_name']?></td>
         			<td><?php echo $v['create_time']?></td>
@@ -75,6 +75,22 @@
                 shade: 0.8,
                 area: ['50%', '70%'],
                 content: "<?php echo Url::to(['role/add'])?>?id="+id
+            });
+        });
+
+        $('.btn-del').on('click', function () {
+            var id = $(this).attr('data-id');
+            var index = layer.alert("确认要删除此角色吗？", function () {
+                $.get("<?php echo Url::to(['role/del'])?>", {'id':id}, function (data) {
+                    layer.close(index);
+                    if(data.code == 0){
+                        layer.alert(data.msg);
+                        return;
+                    }
+                    layer.msg(data.msg, function () {
+                        $("#tr"+id).remove();
+                    });
+                })
             });
         });
     });
