@@ -42,7 +42,7 @@
                     </div>
                     
                     <div class="form-group" style="margin:0 auto;">
-                        <button class="btn btn-info btn-detail submit" type="submit">添加</button>
+                        <button class="btn btn-info btn-detail submit" type="submit">保存</button>
                     </div>
                 <?php ActiveForm::end();?>
             </div>

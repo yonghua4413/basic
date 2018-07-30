@@ -72,6 +72,22 @@ class Role extends \yii\db\ActiveRecord
         if(!$res) return null;
         return$res;
     }
+
+    public static function edit($id = 0, $data = []){
+        if(!$id || !count($data)){
+            return false;
+        }
+        $_this = self::findOne(['id' => $id]);
+        $fields = $_this->attributeLabels();
+        foreach ($fields as $k => $v){
+            if(isset($data[$k]) && $data[$k]){
+                $_this -> $k = $data[$k];
+            }
+        }
+        $res = $_this->save();
+        if(!$res) return false;
+        return true;
+    }
     
     /**
      * 查询日志列表

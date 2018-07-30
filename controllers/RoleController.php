@@ -106,4 +106,21 @@ class RoleController extends MyController
         if(!$res) $this->return_json(['code' => 0, 'msg' => '添加失败']);
         $this->return_json(['code' => 1, 'msg' => "操作成功"]);
     }
+
+    public function actionDoedit(){
+        $data = $this->data;
+        $roleName = trim($this->input->get('role_name'));
+        $id = intval($this->input->get('id'));
+        if(empty($roleName)) $this->return_json(['code' => 0, "msg" => "角色名不能为空"]);
+        $sort = (int) $this->input->get('sort');
+        $add = [
+            'role_name' => $roleName,
+            'sort' => $sort,
+            'update_id' => $data['userInfo']['id'],
+            'update_time' => date('Y-m-d H:i:s')
+        ];
+        $res = Role::edit($id, $data);
+        if(!$res) $this->return_json(['code' => 0, 'msg' => '编辑失败']);
+        $this->return_json(['code' => 1, 'msg' => "操作成功"]);
+    }
 }
