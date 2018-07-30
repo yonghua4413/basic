@@ -68,7 +68,7 @@ class Role extends \yii\db\ActiveRecord
     }
 
     public static function getOne($where = []){
-        $res = self::find()->where($where)->select('id, role_name, sort')->asArray->one();
+        $res = self::find()->where($where)->select('id, role_name, sort')->asArray()->one();
         if(!$res) return null;
         return$res;
     }
