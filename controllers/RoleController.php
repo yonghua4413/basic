@@ -119,7 +119,7 @@ class RoleController extends MyController
             'update_id' => $data['userInfo']['id'],
             'update_time' => date('Y-m-d H:i:s')
         ];
-        $res = Role::edit($id, $data);
+        $res = Role::edit($id, $add);
         if(!$res) $this->return_json(['code' => 0, 'msg' => '编辑失败']);
         $this->return_json(['code' => 1, 'msg' => "操作成功"]);
     }
