@@ -37,7 +37,7 @@
                             <span class="glyphicon glyphicon-edit"></span> 编辑
                         </button>
                         <button type="button" class="btn btn-success btn-detail auth" data-id="<?php echo $v['id']?>">
-                            <span class="glyphicon glyphicon-plus"></span> 权限
+                            <span class="glyphicon glyphicon-cog"></span> 权限
                         </button>
                         <button type="button" class="btn btn-warning btn-detail btn-del" data-id="<?php echo $v['id']?>">
                         	<span class="glyphicon glyphicon-remove"></span> 删除
